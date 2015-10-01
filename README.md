@@ -1,4 +1,7 @@
-# CS290I_HW_4
+
+#Location Data Collection Server (flask) and Client Implementation (iOS)
+### CS290I_HW_4
+
 In this assigment you will be creating a cloud mySQL database hosted on pythonanywhere.com.
 The webserver database will contain one table **lat_long_table** . The table will have four fields as follows:
 * lat (float)
