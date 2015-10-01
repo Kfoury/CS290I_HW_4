@@ -8,7 +8,9 @@ The webserver database will contain one table **lat_long_table** . The table wil
 
 **The following mySQL bash code can be used to create your database**
 > MySQL Code
-CREATE TABLE lat_long_table (id INT NOT NULL AUTO_INCREMENT, description VARCHAR(100) NOT NULL, lat float , longi float , epoch int(11), PRIMARY KEY ( id ));
+
+
+    CREATE TABLE lat_long_table (id INT NOT NULL AUTO_INCREMENT, description VARCHAR(100) NOT NULL, lat float , longi float , epoch int(11), PRIMARY KEY ( id ));
 
 
 **Flask Webmethod to implement**
