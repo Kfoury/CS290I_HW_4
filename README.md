@@ -7,8 +7,6 @@ The webserver database will contain one table **lat_long_table** . The table wil
 * id (Primary key, autoincrement)
 
 **The following mySQL bash code can be used to create your database**
-> MySQL Code
-
 
     CREATE TABLE lat_long_table (id INT NOT NULL AUTO_INCREMENT, description VARCHAR(100) NOT NULL, lat float , longi float , epoch int(11), PRIMARY KEY ( id ));
 
@@ -68,3 +66,12 @@ The webserver database will contain one table **lat_long_table** . The table wil
     import time
     import random
  
+#Deliverables
+
+* A compressed file containing the xCode project hosted on this repo. The project should be configured such that it sends data to your own webserver (username.pythonanywhere.com). 
+* Attach with your submission a snapshot of your **lat_long_table** content. You can access the table content via the mySQL console:
+
+
+    select * from lat_long_table; 
+
+You will recieve full credit as long as the app sucessfully sends location data to your server.
