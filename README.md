@@ -54,11 +54,12 @@ CREATE TABLE lat_long_table (id INT NOT NULL AUTO_INCREMENT, description VARCHAR
         db.rollback()
         return json.dumps({'response_description':'error saving the data','response_int':2})
 
-> Remember to import these libraries
-   import MySQLdb
-   from flask import Flask
-   from flask import request
-   import json
-   import socket, ssl, struct
-   import time
-   import random
+**Remember to import these libraries**
+    import MySQLdb
+    from flask import Flask
+    from flask import request
+    import json
+    import socket, ssl, struct
+    import time
+    import random
+ 
