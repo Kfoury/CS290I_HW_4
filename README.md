@@ -20,7 +20,6 @@ The webserver database will contain one table **lat_long_table** . The table wil
 
     @app.route('/push_location_data_290I',methods=['POST'])
     def push_location_data():
-    #return "ff"
 
 
     db = MySQLdb.connect("mysql.server","fadikf","151515","fadikf$default" )
@@ -48,7 +47,6 @@ The webserver database will contain one table **lat_long_table** . The table wil
     t=time.time()
 
 
-    a=""
     try:
         cursor.execute("INSERT INTO lat_long_table (description, lat, longi, epoch)  VALUES ("+"'"+device_id+"'"+","+str(latitude)+","+str(longitude)+","+str(int(t))+");")
 
