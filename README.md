@@ -11,10 +11,10 @@ The webserver database will contain one table **lat_long_table** . The table wil
 CREATE TABLE lat_long_table (id INT NOT NULL AUTO_INCREMENT, description VARCHAR(100) NOT NULL, lat float , longi float , epoch int(11), PRIMARY KEY ( id ));
 
 
->Flask Webmethod to implement
+**Flask Webmethod to implement**
 
-  @app.route('/push_location_data_290I',methods=['POST'])
-def push_location_data():
+   @app.route('/push_location_data_290I',methods=['POST'])
+   def push_location_data():
     #return "ff"
 
 
@@ -55,10 +55,10 @@ def push_location_data():
         return json.dumps({'response_description':'error saving the data','response_int':2})
 
 > Remember to import these libraries
-  import MySQLdb
-  from flask import Flask
-  from flask import request
-  import json
-  import socket, ssl, struct
-  import time
-  import random
+   import MySQLdb
+   from flask import Flask
+   from flask import request
+   import json
+   import socket, ssl, struct
+   import time
+   import random
