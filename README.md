@@ -13,8 +13,10 @@ CREATE TABLE lat_long_table (id INT NOT NULL AUTO_INCREMENT, description VARCHAR
 
 **Flask Webmethod to implement**
 
-   @app.route('/push_location_data_290I',methods=['POST'])
-   def push_location_data():
+
+
+    @app.route('/push_location_data_290I',methods=['POST'])
+    def push_location_data():
     #return "ff"
 
 
@@ -55,6 +57,7 @@ CREATE TABLE lat_long_table (id INT NOT NULL AUTO_INCREMENT, description VARCHAR
         return json.dumps({'response_description':'error saving the data','response_int':2})
 
 **Remember to import these libraries**
+
     import MySQLdb
     from flask import Flask
     from flask import request
