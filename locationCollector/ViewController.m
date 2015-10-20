@@ -13,6 +13,8 @@
 
 {
     CLLocationManager * myManager;
+    
+    
     CMMotionManager *motionManager;
     
     float lastLat;
@@ -129,14 +131,28 @@
    
     
     
-    //COMPLETE COMPLETE COMPLETE COMPLETE COMPLETE COMPLETE
+    //time stamp is missing
+    NSDictionary * locationData = @{@"lat":[NSNumber numberWithFloat:lastLat],@"long":[NSNumber numberWithFloat:lastLong],@"acc_x":[NSNumber numberWithFloat:lastAccX],@"acc_y":[NSNumber numberWithFloat:lastAccY],@"acc_z":[NSNumber numberWithFloat:lastAccZ], @"bat":[NSNumber numberWithFloat:batteryLife],@"tag":groupDescription,@"issuer_id":groupUniqueID};
+    
+    [arrayOfPoints addObject:locationData];
     
     
+      [self uploadLocation];
     
 }
 
 
-
+//-(void) pushLocation
+//{
+//    
+//    
+//  
+//    
+//    [self uploadLocation];
+//    
+//    
+//    
+//}
 
 -(void) uploadLocation
 {
@@ -156,12 +172,31 @@
         //push the last point
         
         NSDictionary * pointToBeSent = [arrayOfPoints objectAtIndex:0];
-        //if the call succeeds then remove the first object and try to push again
+        //if the call succeeds then remove the first 10 objects and try to push again
         
         
-        //push here
+        [myBrain sendLocationDataToServerWithData:pointToBeSent andFblock:^(NSString *error) {
+            
+            UIAlertView * theAlert = [[UIAlertView alloc] initWithTitle:@"Could not transmit data" message:@"Please check your internet connection" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
+            
+            [theAlert show];
+            
+            
+            
+        } andSblock:^(NSDictionary *response) {
+            [arrayOfPoints removeObjectAtIndex:0];
+            
+            isCurrentlySendingLocationToServer = NO;
+            [self uploadLocation];
+            
+            
+            
+            
+        }];
         
-        //COMPLETE COMPLETE COMPLETE COMPLETE COMPLETE COMPLETE
+        
+        
+        
         
         
         
